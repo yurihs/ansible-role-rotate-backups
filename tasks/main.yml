@@ -1,0 +1,23 @@
+---
+- name: install rotate-backups https://github.com/xolox/python-rotate-backups
+  pip:
+    name: rotate-backups
+
+- name: Template config into place
+  template:
+    src: templates/rotate-backups.ini.j2
+    dest: /etc/rotate-backups.ini
+    owner: bin
+    group: sudo
+    mode: '0774'
+
+- name: rotate cronjob
+  cron:
+    name: "Rotate backups"
+    minute: "{{ rotate_backups_cron.minute }}"
+    hour: "{{ rotate_backups_cron.hour }}"
+    day: "{{ rotate_backups_cron.day }}"
+    month: "{{ rotate_backups_cron.month }}"
+    weekday: "{{ rotate_backups_cron.weekday }}"
+    user: root
+    job: "python /usr/local/bin/rotate-backups"

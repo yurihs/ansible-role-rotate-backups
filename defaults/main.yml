@@ -1,0 +1,16 @@
+rotate_backups_cron:
+  minute: 7
+  hour: '*'
+  day: '*'
+  month: '*'
+  weekday: '*'
+
+rotate_target_directory: "/backups"
+
+rotate_retintion_config:
+  hourly: 24
+  daily: 1
+  weekly: 3
+  monthly: 6
+  yearly: always
+  ionice: idle
