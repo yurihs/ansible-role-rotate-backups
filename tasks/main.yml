@@ -1,4 +1,8 @@
 ---
+- name: Ensure pip is available
+  apt:
+    name: python-pip
+
 - name: install rotate-backups https://github.com/xolox/python-rotate-backups
   pip:
     name: rotate-backups
