@@ -5,7 +5,7 @@ rotate_backups_cron:
   month: '*'
   weekday: '*'
 
-rotate_target_directory: "/backups"
+rotate_target_directory: "/backup"
 
 rotate_retintion_config:
   hourly: 24
