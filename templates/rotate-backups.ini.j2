@@ -1,7 +1,10 @@
-[{{ rotate_target_directory }}]
-hourly = {{ rotate_retention_config.hourly }}
-daily = {{ rotate_retention_config.daily }}
-weekly = {{ rotate_retention_config.weekly }}
-monthly = {{ rotate_retention_config.monthly }}
-yearly = {{ rotate_retention_config.yearly }}
-ionice = {{ rotate_retention_config.ionice }}
+{% for target in rotate_targets -%}
+[{{ target.directory }}]
+hourly = {{ target.hourly }}
+daily = {{ target.daily }}
+weekly = {{ target.weekly }}
+monthly = {{ target.monthly }}
+yearly = {{ target.yearly }}
+ionice = {{ target.ionice }}
+
+{% endfor %}

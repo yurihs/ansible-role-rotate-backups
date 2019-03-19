@@ -5,12 +5,11 @@ rotate_backups_cron:
   month: '*'
   weekday: '*'
 
-rotate_target_directory: "/backup"
-
-rotate_retention_config:
-  hourly: 24
-  daily: 1
-  weekly: 3
-  monthly: 6
-  yearly: always
-  ionice: idle
+rotate_targets:
+  - directory: "/backup"
+    hourly: 24
+    daily: 1
+    weekly: 3
+    monthly: 6
+    yearly: always
+    ionice: idle
