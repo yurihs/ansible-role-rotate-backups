@@ -5,6 +5,8 @@ daily = {{ target.daily }}
 weekly = {{ target.weekly }}
 monthly = {{ target.monthly }}
 yearly = {{ target.yearly }}
+{% if target.ionice is defined -%}
 ionice = {{ target.ionice }}
+{%- endif %}
 
 {% endfor %}
